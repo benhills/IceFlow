@@ -6,6 +6,11 @@ Created on Wed Dec 4 2018
 @author: benhills
 """
 
+def vialov(x,L,A,adot,const):
+    K = 2*(const.n+2)**(1/const.n)/(const.rho*const.g)*(adot/(2.*A))**(1./const.n)
+    H = (K*(L**(1.+1./const.n)-x**(1.+1./const.n)))**(1/(2.+2./const.n))
+    return H
+
 def flow_dansgaard_johnson(ws,Eps,Eps_c):
     """
     Vertical velocity from Kingslake et al., 2014
